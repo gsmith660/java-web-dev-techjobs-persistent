@@ -23,3 +23,10 @@ SELECT DISTINCT s.name, s.description
 FROM skill s
 INNER JOIN job_skills ON s.id = job_skills.skills_id
 ORDER BY s.name;
+
+# Altered previous solution to force a use of is not null
+SELECT DISTINCT s.name, s.description
+FROM skill s
+LEFT JOIN job_skills ON s.id = job_skills.skills_id
+WHERE job_skills.skills_id IS NOT NULL
+ORDER BY s.name;
