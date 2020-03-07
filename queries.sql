@@ -17,3 +17,9 @@ WHERE s.id IN (
     FROM job_skills js
 )
 ORDER BY s.name;
+
+# Alternate solution to part 4 still doesn't use IS NOT NULL
+SELECT DISTINCT s.name, s.description
+FROM skill s
+INNER JOIN job_skills ON s.id = job_skills.skills_id
+ORDER BY s.name;
