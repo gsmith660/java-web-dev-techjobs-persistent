@@ -8,6 +8,7 @@ public class Job extends AbstractEntity {
     @ManyToOne
     private Employer employer;
 
+
     private String skills;
 
     public Job() {
