@@ -10,3 +10,10 @@ WHERE location = "St. Louis City";
 DROP TABLE job;
 
 ## Part 4: Test it with SQL
+SELECT s.name, s.description
+FROM skill s
+WHERE s.id IN (
+	SELECT js.skills_id
+    FROM job_skills js
+)
+ORDER BY s.name;
